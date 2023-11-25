@@ -1,0 +1,68 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    width: 100%;
+    display: grid;
+    height: 50vh;
+    text-align: center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    section{
+        height: 100%;
+        display: grid;
+        place-content: center;
+
+        h1{
+            font-size: 5rem;
+            color: #C89B3C;
+
+        }
+
+        p{
+            font-size: 3rem;
+            color: #a58031;
+            text-transform: capitalize;         
+        }
+    }
+}
+
+article{
+    background: rgb(9,20,40);
+    background: linear-gradient(90deg, rgba(9,20,40,1) 0%, rgba(10,20,40,1) 35%);
+
+    #champion_info{
+        width: 100vw;
+        height: 100%;
+        border: solid 2px red;
+
+        .info_container{
+            margin: 0 auto;
+            display: grid;
+            place-content: center;
+            justify-items: center;
+            margin-top: 1rem;
+            border: solid 2px;
+            border-color: #C89B3C;
+            border-radius: 0.2rem;
+            max-width: 50rem;
+            padding: 1rem;
+        }
+        .champion_lore{
+            p{
+                font-size: clamp(15px,1.5vw,2vw);
+                text-align: justify;
+                color: #C89B3C;
+                margin: 0px 2%;
+                max-width: 50rem;
+                min-width: 20rem;
+                margin: 1rem; 
+            }      
+        }
+        
+    }
+}

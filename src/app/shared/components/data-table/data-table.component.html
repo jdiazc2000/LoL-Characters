@@ -1,0 +1,8 @@
+<p>data-table works!</p>
+
+<button (click)="SearchChampion('Aphelios')">Aphelios</button>
+
+<div *ngFor="let champions of ApiData">
+    <h1>{{champions.id}}</h1>
+    <a (click)="SearchChampion(champions.id)"><img [src]="'http://ddragon.leagueoflegends.com/cdn/img/champion/splash/' + champions.id + '_0.jpg'" [alt]="'champion_' + champions.id"/></a>
+</div>
