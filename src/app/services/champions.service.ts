@@ -10,9 +10,9 @@ export class ChampionsService {
   constructor(private http: HttpClient) { }
 
   public  API_KEY:string = "RGAPI-e59c1375-58d5-4571-9cd2-4e9f2f0d3a93"
-  private AllChampionsUrl = 'http://ddragon.leagueoflegends.com/cdn/13.11.1/data/es_MX/champion.json' + "?api_key=" + this.API_KEY
-  private AllChampionsLoadingScreenUrl = 'http://ddragon.leagueoflegends.com/cdn/img/champion/loading/'
-  private FilterChampionUrl = 'http://ddragon.leagueoflegends.com/cdn/13.11.1/data/es_MX/champion/'
+  private AllChampionsUrl = 'https://ddragon.leagueoflegends.com/cdn/13.11.1/data/es_MX/champion.json' + "?api_key=" + this.API_KEY
+  private AllChampionsLoadingScreenUrl = 'https://ddragon.leagueoflegends.com/cdn/img/champion/loading/'
+  private FilterChampionUrl = 'https://ddragon.leagueoflegends.com/cdn/13.11.1/data/es_MX/champion/'
 
   public getChampions(): Observable<any>{
     return this.http.get<any>(`${this.AllChampionsUrl}`);
