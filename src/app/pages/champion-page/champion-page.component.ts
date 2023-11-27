@@ -15,6 +15,7 @@ export class ChampionPageComponent implements OnInit {
   championSkins!: string;
   SkinChampionSelected!: string;
   skinLoading: boolean = true;
+  API_KEY:string = "RGAPI-e59c1375-58d5-4571-9cd2-4e9f2f0d3a93"
 
   constructor(
     private championService: ChampionsService,
@@ -45,7 +46,7 @@ export class ChampionPageComponent implements OnInit {
 
    ChangeSkin(SkinID:number){
       //this.skinLoading = true;
-      this.SkinChampionSelected = this.championSkins  + '_' + SkinID + '.jpg';
+      this.SkinChampionSelected = this.championSkins  + '_' + SkinID + '.jpg' + "?api_key=" + this.API_KEY;
       console.log(this.SkinChampionSelected)
    }
 
