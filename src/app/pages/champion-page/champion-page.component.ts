@@ -14,7 +14,9 @@ export class ChampionPageComponent implements OnInit {
   championSquareUrl!: string;
   championSkins!: string;
   SkinChampionSelected!: string;
-  skinLoading: boolean = true;
+  // skinLoading: boolean = true;
+  selectedBtnIndex!: any;
+  activeBtn: boolean = true
   API_KEY:string = "RGAPI-e59c1375-58d5-4571-9cd2-4e9f2f0d3a93"
 
   constructor(
@@ -29,11 +31,11 @@ export class ChampionPageComponent implements OnInit {
       this.championService.getChampion(this.championName).subscribe(
         (response) => {
           this.championInfo = Object.values(response.data);
-          this.championSquareUrl = 'http://ddragon.leagueoflegends.com/cdn/13.11.1/img/champion/' + this.championName + '.png';
-          this.championSkins = 'http://ddragon.leagueoflegends.com/cdn/img/champion/splash/' + this.championName;
-          this.championBannerUrl = 'http://ddragon.leagueoflegends.com/cdn/img/champion/splash/' + this.championName +'_0.jpg';
+          this.championSquareUrl = 'https://ddragon.leagueoflegends.com/cdn/13.11.1/img/champion/' + this.championName + '.png';
+          this.championSkins = 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/' + this.championName;
+          this.championBannerUrl = 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/' + this.championName +'_0.jpg';
           this.SkinChampionSelected = this.championBannerUrl
-          this.skinLoading = false
+         // this.skinLoading = false
           console.log(this.championInfo);
         },
         (error) => {
@@ -45,13 +47,20 @@ export class ChampionPageComponent implements OnInit {
   }
 
    ChangeSkin(SkinID:number){
-      //this.skinLoading = true;
+    if( this.selectedBtnIndex = SkinID){
+      this.activeBtn = true
+    }else{
+      this.activeBtn = false
+    }
+
+    console.log(this.selectedBtnIndex)
+
       this.SkinChampionSelected = this.championSkins  + '_' + SkinID + '.jpg' + "?api_key=" + this.API_KEY;
       console.log(this.SkinChampionSelected)
    }
 
    ErrorImageStatus(){
-    this.SkinChampionSelected = 'https://sitechecker.pro/wp-content/uploads/2023/06/403-status-code.png'
+    this.SkinChampionSelected = 'assets/images/403.webp'
    }
 }
   

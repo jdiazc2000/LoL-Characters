@@ -36,7 +36,9 @@
     </div>
 
     <div>
-      <button *ngFor="let skinslength of championInfo[0].skins; let i = index" (click)="ChangeSkin(i)" class="skinbutton">
+      <button
+       *ngFor="let skinslength of championInfo[0].skins; let i = index" (click)="ChangeSkin(i)" 
+      [ngClass]="{'skinbutton': i !== selectedBtnIndex, 'skinbutton_clicked': i === selectedBtnIndex}">
       </button>
     </div>
   </article>

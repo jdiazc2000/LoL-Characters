@@ -88,7 +88,19 @@ article{
         margin: 0.4rem;
         border-radius: 100%;
         border-color: #c89b3c;
-        border: none;
+        border: solid;
+    }
+
+    .skinbutton:hover{
+        border-color: white;
+    }
+
+    .skinbutton_clicked{
+        background-color: #c89b3c;
+        padding: 0.7rem;
+        margin: 0.4rem;
+        border-radius: 100%;
+        border-color: white;
     }
 }
 
