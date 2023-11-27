@@ -10,8 +10,11 @@ import { ChampionsService } from 'src/app/services/champions.service';
 export class ChampionPageComponent implements OnInit {
   championName!: string;
   championInfo: any; 
-  championBannerUrl!: string 
-  championSquareUrl!: string
+  championBannerUrl!: string;
+  championSquareUrl!: string;
+  championSkins!: string;
+  SkinChampionSelected!: string;
+  skinLoading: boolean = true;
 
   constructor(
     private championService: ChampionsService,
@@ -22,13 +25,15 @@ export class ChampionPageComponent implements OnInit {
   ngOnInit() {
     this.activatedRoute.params.subscribe((params) => {
       this.championName = params['ChampionName'];
-
       this.championService.getChampion(this.championName).subscribe(
         (response) => {
           this.championInfo = Object.values(response.data);
-          this.championBannerUrl = 'http://ddragon.leagueoflegends.com/cdn/img/champion/splash/' + this.championName +'_0.jpg'
-          this.championSquareUrl = 'http://ddragon.leagueoflegends.com/cdn/13.11.1/img/champion/' + this.championName + '.png'
-          console.log(this.championInfo)
+          this.championSquareUrl = 'http://ddragon.leagueoflegends.com/cdn/13.11.1/img/champion/' + this.championName + '.png';
+          this.championSkins = 'http://ddragon.leagueoflegends.com/cdn/img/champion/splash/' + this.championName;
+          this.championBannerUrl = 'http://ddragon.leagueoflegends.com/cdn/img/champion/splash/' + this.championName +'_0.jpg';
+          this.SkinChampionSelected = this.championBannerUrl
+          this.skinLoading = false
+          console.log(this.championInfo);
         },
         (error) => {
           this.router.navigate(['/'])
@@ -36,7 +41,16 @@ export class ChampionPageComponent implements OnInit {
         }
       );
     });
-
-   
   }
+
+   ChangeSkin(SkinID:number){
+      //this.skinLoading = true;
+      this.SkinChampionSelected = this.championSkins  + '_' + SkinID + '.jpg';
+      console.log(this.SkinChampionSelected)
+   }
+
+   ErrorImageStatus(){
+    this.SkinChampionSelected = 'https://sitechecker.pro/wp-content/uploads/2023/06/403-status-code.png'
+   }
 }
+  

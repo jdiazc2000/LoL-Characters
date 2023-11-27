@@ -25,4 +25,6 @@ export class ChampionsService {
     return this.http.get<any>(`${this.FilterChampionUrl + champion + '.json'}`,)
   }
 
+  
+
 }

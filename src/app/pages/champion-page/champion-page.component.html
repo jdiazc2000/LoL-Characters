@@ -1,11 +1,11 @@
 <div *ngIf="championInfo !== undefined">
-  <header 
+  <header
   style="
   background: linear-gradient(rgba(29, 29, 29, 0.686), rgba(0, 0, 0, 0.683)), 
   url({{championBannerUrl}});   
   background-size: cover;
   background-position: top;
-  background-repeat: no-repeat; ">
+  background-repeat: no-repeat;">
     <section>
       <h1>{{ championInfo[0].id }}</h1>
       <p>{{ championInfo[0].title }}</p>
@@ -14,14 +14,30 @@
 
   <article>
     <div id="champion_info">
-
       <div class="info_container">
-      <img [src]=championSquareUrl alt="">
-      <div class="champion_lore">
-        <p>{{ championInfo[0].lore }}</p>
+        <img [src]="championSquareUrl" alt="" />
+        <div class="champion_lore">
+          <p>{{ championInfo[0].lore }}</p>
+        </div>
       </div>
     </div>
+  </article>
 
+  <!-- (load)="LoadingImage()" -->    
+  <article id="champion_skin_article">
+    <div id="champion_skins">
+      <img
+        class="champion_skin"
+        [src]="SkinChampionSelected"
+  
+        (error)="ErrorImageStatus()"
+        [alt]=""
+      />
+    </div>
+
+    <div>
+      <button *ngFor="let skinslength of championInfo[0].skins; let i = index" (click)="ChangeSkin(i)" class="skinbutton">
+      </button>
     </div>
   </article>
 </div>

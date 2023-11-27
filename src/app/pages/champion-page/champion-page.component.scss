@@ -36,8 +36,10 @@ article{
     background: linear-gradient(90deg, rgba(9,20,40,1) 0%, rgba(10,20,40,1) 35%);
 
     #champion_info{
+        /*
         width: 100vw;
         height: 100%;
+        */
         border: solid 2px red;
 
         .info_container{
@@ -46,8 +48,9 @@ article{
             place-content: center;
             justify-items: center;
             margin-top: 1rem;
+            margin-bottom: 1rem;
             border: solid 2px;
-            border-color: #C89B3C;
+            border-color: #c89b3c;
             border-radius: 0.2rem;
             max-width: 50rem;
             padding: 1rem;
@@ -62,7 +65,30 @@ article{
                 min-width: 20rem;
                 margin: 1rem; 
             }      
-        }
-        
+        }     
     }
 }
+
+#champion_skin_article{
+
+    margin: 0 auto;
+    display: grid;
+    place-content: center;
+    justify-items: center;
+
+
+    .champion_skin{
+        margin: 1rem;
+        width: 50rem;
+    }
+
+    .skinbutton{
+        background-color: #c89b3c;
+        padding: 0.7rem;
+        margin: 0.4rem;
+        border-radius: 100%;
+        border-color: #c89b3c;
+        border: none;
+    }
+}
+
