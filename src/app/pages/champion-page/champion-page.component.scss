@@ -11,6 +11,7 @@ header{
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    position: relative;
 
     section{
         height: 100%;
@@ -27,6 +28,26 @@ header{
             font-size: 3rem;
             color: #a58031;
             text-transform: capitalize;         
+        }
+
+        .returnBtn{
+            position: absolute;
+            // left: 0;
+            padding: 1.5rem;
+            
+            button{
+                font-size: 2.5rem;
+                padding: 0.7rem;
+                border-radius: 100%;
+                border: solid 0.3rem;
+                border-color: #a58031;
+                transition: 0.2s ease-in-out;;
+            }
+
+            button:hover{
+                background-color: rgb(200, 200, 200);
+                padding: 0.6rem;
+            }
         }
     }
 }
@@ -70,7 +91,6 @@ article{
 }
 
 #champion_skin_article{
-
     margin: 0 auto;
     display: grid;
     place-content: center;
@@ -79,8 +99,9 @@ article{
 
     .champion_skin{
         margin: 1rem;
-        width: 50rem;
-        height: 30rem;
+        width: 100%;
+        max-width: 50rem;
+        max-height: 30rem;
     }
 
     .skinbutton{

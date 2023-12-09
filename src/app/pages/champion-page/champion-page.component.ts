@@ -17,7 +17,7 @@ export class ChampionPageComponent implements OnInit {
   // skinLoading: boolean = true;
   selectedBtnIndex!: any;
   activeBtn: boolean = true
-  API_KEY:string = "RGAPI-e59c1375-58d5-4571-9cd2-4e9f2f0d3a93"
+  API_KEY:string = "RGAPI-e8851fff-81ac-4e70-abb7-951a3a3542de"
 
   constructor(
     private championService: ChampionsService,
@@ -46,14 +46,16 @@ export class ChampionPageComponent implements OnInit {
     });
   }
 
+  return(){
+    this.router.navigate(['/'])
+  }
+
    ChangeSkin(SkinID:number){
     if( this.selectedBtnIndex = SkinID){
       this.activeBtn = true
     }else{
       this.activeBtn = false
     }
-
-    console.log(this.selectedBtnIndex)
 
       this.SkinChampionSelected = this.championSkins  + '_' + SkinID + '.jpg' + "?api_key=" + this.API_KEY;
       console.log(this.SkinChampionSelected)
