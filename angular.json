@@ -32,7 +32,8 @@
             ],
             
             "styles": [
-              "src/styles.sass"
+              "src/styles.sass",
+              "node_modules/ngx-spinner/animations/ball-clip-rotate-multiple.css"
             ],
             "scripts": []
           },
@@ -95,7 +96,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.sass"
+              "src/styles.sass",
+              "node_modules/ngx-spinner/animations/ball-clip-rotate-multiple.css"
             ],
             "scripts": []
           }

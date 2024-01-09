@@ -1,5 +1,5 @@
 <div *ngIf="championInfo !== undefined">
-  <header
+<header
   style="
   background: linear-gradient(rgba(29, 29, 29, 0.686), rgba(0, 0, 0, 0.683)), 
   url({{championBannerUrl}});   
@@ -10,7 +10,7 @@
       <h1>{{ championInfo[0].id }}</h1>
       <p>{{ championInfo[0].title }}</p>
       <div class="returnBtn">
-        <button (click)="return()"><i class="fa-solid fa-person-walking-arrow-loop-left" style="color: #c89b3c;"></i></button>
+        <button (click)="return()" title="returnBtn"><i class="fa-solid fa-person-walking-arrow-loop-left" style="color: #c89b3c;"></i></button>
       </div>
     </section>
   </header>
@@ -26,19 +26,25 @@
     </div>
   </article>
 
+
   <!-- (load)="LoadingImage()" -->    
   <article id="champion_skin_article">
-    <div id="champion_skins">
-      <img
+    <ngx-spinner bdColor = "rgba(0, 0, 0, 0.8)" size = "large" color = "#c89b3c" type = "ball-clip-rotate-multiple" [fullScreen] = "true"></ngx-spinner> 
+    <section id="champion_skins">
+      <div class="image">
+        <img
         class="champion_skin"
         [src]="SkinChampionSelected"
-  
-        (error)="ErrorImageStatus()"
+        (load)="ImageOk()"
         [alt]=""
       />
-    </div>
+      </div>
+      <div class="skin_name">
+        <h1>{{ SkinChampionName }}</h1>
+      </div>
+    </section>
 
-    <div>
+    <div class="skinsbuttoncontainer">
       <button
        *ngFor="let skinslength of championInfo[0].skins; let i = index" (click)="ChangeSkin(i)" 
       [ngClass]="{'skinbutton': i !== selectedBtnIndex, 'skinbutton_clicked': i === selectedBtnIndex}">
