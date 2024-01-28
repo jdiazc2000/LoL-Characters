@@ -1,0 +1,29 @@
+*{
+    background: rgb(9,20,40);
+}
+
+app-data-table{
+    display: grid;
+    justify-items: center;
+}
+
+pagination-controls{
+    display: grid;
+    justify-items: center;
+    font-size: 1.5rem;
+}
+
+.custom-pagination ::ng-deep .ngx-pagination {
+    a{
+        font-size: 1rem;
+    }
+
+    span,a{
+        color: white;
+    } 
+    
+    .current {
+        background: #C89B3C;
+        color: white;
+}
+}

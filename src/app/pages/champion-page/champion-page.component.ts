@@ -30,6 +30,7 @@ export class ChampionPageComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    this.spinner.show();
     this.SkinChampionName = 'Predeterminado';
     this.activatedRoute.params.subscribe((params) => {
       this.championName = params['ChampionName'];
@@ -54,6 +55,7 @@ export class ChampionPageComponent implements OnInit {
             '/' +
             this.championInfo[0].skins[0].id +
             '.jpg';
+     
           console.log(this.championInfo);
         },
         (error) => {

@@ -11,6 +11,7 @@ import { WelcomePageComponent } from './pages/welcome-page/welcome-page.componen
 import { NavbarComponent } from './shared/components/navbar/navbar.component';
 import { DataTableComponent } from './shared/components/data-table/data-table.component';
 import { ChampionPageComponent } from './pages/champion-page/champion-page.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { ChampionPageComponent } from './pages/champion-page/champion-page.compo
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    NgxSpinnerModule
+    NgxSpinnerModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent],
