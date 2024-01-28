@@ -1,12 +1,12 @@
 <div class="champion_container">
-<div *ngFor="let champions of ApiData | paginate: { itemsPerPage: 16, currentPage: page }; index as i">
+<div *ngFor="let champions of ApiData | filter: FilteredChampion | paginate: { itemsPerPage: 16, currentPage: page }; index as i">
     <div>
         <div class="name_roles_container">
             <h1>{{champions.name}}</h1>
             <div class="roles_container">
                 <div class="roles" [ngSwitch]="champions.tags[0]">
                     <img *ngSwitchCase="'Fighter'" class="tagimg" src="../../../../assets/tags/Fighter_icon.webp" alt="Peleador" title="Peleador">
-                    <img *ngSwitchCase="'Support'" class="tagimg" src="../../../../assets/tags/Controller_icon.webp" alt="Controlador"  title="Controlador">
+                    <img *ngSwitchCase="'Support'" class="tagimg" src="../../../../assets/tags/Controller_icon.webp" alt="Soporte"  title="Soporte">
                     <img *ngSwitchCase="'Mage'" class="tagimg" src="../../../../assets/tags/Mage_icon.webp" alt="Mago"  title="Mago">
                     <img *ngSwitchCase="'Marksman'" class="tagimg" src="../../../../assets/tags/Marksman_icon.webp" alt="Tirador"  title="Tirador">
                     <img *ngSwitchCase="'Assassin'" class="tagimg" src="../../../../assets/tags/Slayer_icon.webp" alt="Asesino"  title="Asesino">
@@ -14,7 +14,7 @@
                 </div>
                 <div class="roles" [ngSwitch]="champions.tags[1]">
                     <img *ngSwitchCase="'Fighter'" class="tagimg" src="../../../../assets/tags/Fighter_icon.webp" alt="Peleador" title="Peleador">
-                    <img *ngSwitchCase="'Support'" class="tagimg" src="../../../../assets/tags/Controller_icon.webp" alt="Controlador"  title="Controlador">
+                    <img *ngSwitchCase="'Support'" class="tagimg" src="../../../../assets/tags/Controller_icon.webp" alt="Soporte"  title="Soporte">
                     <img *ngSwitchCase="'Mage'" class="tagimg" src="../../../../assets/tags/Mage_icon.webp" alt="Mago"  title="Mago">
                     <img *ngSwitchCase="'Marksman'" class="tagimg" src="../../../../assets/tags/Marksman_icon.webp" alt="Tirador"  title="Tirador">
                     <img *ngSwitchCase="'Assassin'" class="tagimg" src="../../../../assets/tags/Slayer_icon.webp" alt="Asesino"  title="Asesino">

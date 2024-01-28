@@ -12,6 +12,7 @@ import { NavbarComponent } from './shared/components/navbar/navbar.component';
 import { DataTableComponent } from './shared/components/data-table/data-table.component';
 import { ChampionPageComponent } from './pages/champion-page/champion-page.component';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { FilterPipe } from './pipes/filter.pipe';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
     WelcomePageComponent,
     NavbarComponent,
     DataTableComponent,
-    ChampionPageComponent
+    ChampionPageComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,

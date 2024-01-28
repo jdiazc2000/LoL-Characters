@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, OnChanges, Output, SimpleChanges } from '@angular/core';
 
 @Component({
   selector: 'app-filters',
@@ -6,5 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./filters.component.scss']
 })
 export class FiltersComponent {
+  
+  @Output() filtervalue  = new EventEmitter<string>();
+
+
+  onSearchChange (value: string) {
+      this.filtervalue.emit(value);
+  }
 
 }

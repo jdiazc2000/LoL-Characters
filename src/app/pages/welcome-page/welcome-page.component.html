@@ -1,4 +1,7 @@
-<!-- <app-navbar></app-navbar>
-<app-filters></app-filters> -->
-<app-data-table [page]="PageNum" ></app-data-table>
+<div class="navbar">
+    <app-navbar></app-navbar>
+    <app-filters (filtervalue)="Filter($event)"></app-filters> 
+</div>
+
+<app-data-table [page]="PageNum" [FilteredChampion]="FilterValue"></app-data-table>
 <pagination-controls (pageChange)="PageNum = $event" [previousLabel]="''" [nextLabel]="''" class="custom-pagination"></pagination-controls>

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, Output } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ChampionsService } from 'src/app/services/champions.service';
 
@@ -11,8 +11,9 @@ export class DataTableComponent implements OnInit {
 
   ApiData:any
   ChampionsSplash: any
+
   @Input() page!: number;
-  collection!: any[];  
+  @Input() FilteredChampion!: string;
 
   constructor(private championsService: ChampionsService,
               private router: Router){}
@@ -20,8 +21,7 @@ export class DataTableComponent implements OnInit {
   ngOnInit(): void {
     this.championsService.getChampions().subscribe(
       (response) => {
-           this.ApiData = Object.values(response.data); 
-           this.collection = this.ApiData;  
+           this.ApiData = Object.values(response.data);  
            console.log(this.ApiData) 
       },
       (error) => {
@@ -33,5 +33,4 @@ export class DataTableComponent implements OnInit {
   SearchChampion(champion:string){
     this.router.navigate(['/champion/' + champion])
   }
-
 }

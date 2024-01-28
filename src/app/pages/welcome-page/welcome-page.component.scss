@@ -2,6 +2,21 @@
     background: rgb(9,20,40);
 }
 
+.navbar{
+    display: flex;
+    height: 2rem;
+    background-color: #C89B3C;
+    justify-content: space-around;
+
+    app-navbar{
+        background-color: #C89B3C;
+    }
+
+    app-filters{
+        background-color: #C89B3C;
+    }
+}
+
 app-data-table{
     display: grid;
     justify-items: center;
@@ -14,16 +29,20 @@ pagination-controls{
 }
 
 .custom-pagination ::ng-deep .ngx-pagination {
-    a{
+
+    span,a {
+        color: white;
+    } 
+
+    a,span{
         font-size: 1rem;
     }
 
-    span,a{
-        color: white;
-    } 
-    
     .current {
         background: #C89B3C;
-        color: white;
+        
+        span{
+            color: black;
+    }
 }
 }

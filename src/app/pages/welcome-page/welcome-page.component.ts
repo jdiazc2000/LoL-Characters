@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-welcome-page',
@@ -7,4 +7,9 @@ import { Component, Input } from '@angular/core';
 })
 export class WelcomePageComponent {
   @Input() PageNum: number = 1;
+  @Input() FilterValue!: string;
+
+  Filter(event: string) {
+    this.FilterValue = event;
+  }
 }
