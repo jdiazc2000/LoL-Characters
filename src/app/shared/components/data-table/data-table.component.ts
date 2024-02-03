@@ -11,6 +11,7 @@ export class DataTableComponent implements OnInit {
 
   ApiData:any
   ChampionsSplash: any
+  clicked: {[key: number]: boolean} = {};
 
   @Input() page!: number;
   @Input() FilteredChampion!: string;
@@ -29,8 +30,12 @@ export class DataTableComponent implements OnInit {
       }      
     )
   }
-  
-  SearchChampion(champion:string){
+
+  public RotateCard(i: number): void {
+    this.clicked[i] = !this.clicked[i];
+ }
+
+  public SearchChampion(champion:string){
     this.router.navigate(['/champion/' + champion])
   }
 }

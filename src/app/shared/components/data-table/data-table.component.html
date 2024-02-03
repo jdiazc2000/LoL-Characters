@@ -1,30 +1,50 @@
 <div class="champion_container">
-<div *ngFor="let champions of ApiData | filter: FilteredChampion | paginate: { itemsPerPage: 16, currentPage: page }; index as i">
-    <div>
+<div class="championSquare" *ngFor="let champions of ApiData | filter: FilteredChampion | paginate: { itemsPerPage: 19, currentPage: page }; index as i">
+    <div class="card" (click)="RotateCard(i)">
+        <div class="content" [style.transform]="clicked[i]? 'rotateY(180deg)': 'rotateY(0deg)'">
+          <div class="back">
+            <div class="back-content">
+                <div>
         <div class="name_roles_container">
             <h1>{{champions.name}}</h1>
             <div class="roles_container">
                 <div class="roles" [ngSwitch]="champions.tags[0]">
-                    <img *ngSwitchCase="'Fighter'" class="tagimg" src="../../../../assets/tags/Fighter_icon.webp" alt="Peleador" title="Peleador">
-                    <img *ngSwitchCase="'Support'" class="tagimg" src="../../../../assets/tags/Controller_icon.webp" alt="Soporte"  title="Soporte">
-                    <img *ngSwitchCase="'Mage'" class="tagimg" src="../../../../assets/tags/Mage_icon.webp" alt="Mago"  title="Mago">
-                    <img *ngSwitchCase="'Marksman'" class="tagimg" src="../../../../assets/tags/Marksman_icon.webp" alt="Tirador"  title="Tirador">
-                    <img *ngSwitchCase="'Assassin'" class="tagimg" src="../../../../assets/tags/Slayer_icon.webp" alt="Asesino"  title="Asesino">
-                    <img *ngSwitchCase="'Tank'"class="tagimg" src="../../../../assets/tags/Tank_icon.webp" alt="Tanque"  title="Tanque">
+                    <img *ngSwitchCase="'Fighter'" class="tagimg text" src="../../../../assets/tags/Fighter_icon.webp" alt="Peleador" title="Peleador">
+                    <img *ngSwitchCase="'Support'" class="tagimg text" src="../../../../assets/tags/Controller_icon.webp" alt="Soporte"  title="Soporte">
+                    <img *ngSwitchCase="'Mage'" class="tagimg text" src="../../../../assets/tags/Mage_icon.webp" alt="Mago"  title="Mago">
+                    <img *ngSwitchCase="'Marksman'" class="tagimg text" src="../../../../assets/tags/Marksman_icon.webp" alt="Tirador"  title="Tirador">
+                    <img *ngSwitchCase="'Assassin'" class="tagimg text" src="../../../../assets/tags/Slayer_icon.webp" alt="Asesino"  title="Asesino">
+                    <img *ngSwitchCase="'Tank'"class="tagimg text" src="../../../../assets/tags/Tank_icon.webp" alt="Tanque"  title="Tanque">
                 </div>
                 <div class="roles" [ngSwitch]="champions.tags[1]">
-                    <img *ngSwitchCase="'Fighter'" class="tagimg" src="../../../../assets/tags/Fighter_icon.webp" alt="Peleador" title="Peleador">
-                    <img *ngSwitchCase="'Support'" class="tagimg" src="../../../../assets/tags/Controller_icon.webp" alt="Soporte"  title="Soporte">
-                    <img *ngSwitchCase="'Mage'" class="tagimg" src="../../../../assets/tags/Mage_icon.webp" alt="Mago"  title="Mago">
-                    <img *ngSwitchCase="'Marksman'" class="tagimg" src="../../../../assets/tags/Marksman_icon.webp" alt="Tirador"  title="Tirador">
-                    <img *ngSwitchCase="'Assassin'" class="tagimg" src="../../../../assets/tags/Slayer_icon.webp" alt="Asesino"  title="Asesino">
-                    <img *ngSwitchCase="'Tank'"class="tagimg" src="../../../../assets/tags/Tank_icon.webp" alt="Tanque"  title="Tanque">
+                    <img *ngSwitchCase="'Fighter'" class="tagimg2 text" src="../../../../assets/tags/Fighter_icon.webp" alt="Peleador" title="Peleador">
+                    <img *ngSwitchCase="'Support'" class="tagimg2 text" src="../../../../assets/tags/Controller_icon.webp" alt="Soporte"  title="Soporte">
+                    <img *ngSwitchCase="'Mage'" class="tagimg2 text" src="../../../../assets/tags/Mage_icon.webp" alt="Mago"  title="Mago">
+                    <img *ngSwitchCase="'Marksman'" class="tagimg2 text" src="../../../../assets/tags/Marksman_icon.webp" alt="Tirador"  title="Tirador">
+                    <img *ngSwitchCase="'Assassin'" class="tagimg2 text" src="../../../../assets/tags/Slayer_icon.webp" alt="Asesino"  title="Asesino">
+                    <img *ngSwitchCase="'Tank'"class="tagimg2 text" src="../../../../assets/tags/Tank_icon.webp" alt="Tanque"  title="Tanque">
+
                 </div>
             </div>
         </div>
     </div>
 
-    <a (click)="SearchChampion(champions.id)"><img [src]="'http://ddragon.leagueoflegends.com/cdn/img/champion/splash/' + champions.id + '_0.jpg'" 
+    <a><img [src]="'http://ddragon.leagueoflegends.com/cdn/img/champion/splash/' + champions.id + '_0.jpg'" 
     [alt]="'champion_' + champions.id"/></a>
+</div>
+</div>
+<div class="front">
+
+    <div class="front-content">
+      <div class="description">
+            <h5>{{champions.blurb}}</h5>
+            <div class="btn">
+                <button class="button-name" (click)="SearchChampion(champions.id)">Saber más</button>
+            </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
 </div>
 </div>

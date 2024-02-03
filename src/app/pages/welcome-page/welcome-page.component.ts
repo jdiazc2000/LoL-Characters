@@ -11,5 +11,9 @@ export class WelcomePageComponent {
 
   Filter(event: string) {
     this.FilterValue = event;
+
+    if(this.FilterValue.length != 1){
+      this.PageNum = 1
+    }
   }
 }

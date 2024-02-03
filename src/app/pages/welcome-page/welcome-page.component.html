@@ -4,4 +4,4 @@
 </div>
 
 <app-data-table [page]="PageNum" [FilteredChampion]="FilterValue"></app-data-table>
-<pagination-controls (pageChange)="PageNum = $event" [previousLabel]="''" [nextLabel]="''" class="custom-pagination"></pagination-controls>
+<pagination-controls (pageChange)="PageNum = $event" [previousLabel]="''" [nextLabel]="''" class="custom-pagination" [responsive]="true"></pagination-controls>

@@ -1,2 +1,2 @@
-<input type="text" #newItem>
-<button (click)="onSearchChange(newItem.value)">Emitir</button>
+<input type="text" #newItem (input)="onSearchChange($any($event.target).value)">
+<button (click)="onSearchChange(newItem.value)" [ngClass]="this.filtervalue.length === undefined ?'none':'display'">Limpiar</button>

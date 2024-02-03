@@ -4,17 +4,13 @@
 
 .navbar{
     display: flex;
-    height: 2rem;
-    background-color: #C89B3C;
     justify-content: space-around;
+    background: rgb(9,20,40);
+    background: linear-gradient(90deg, rgba(9,20,40,1) 0%, rgba(10,20,40,1) 35%);
+}
 
-    app-navbar{
-        background-color: #C89B3C;
-    }
-
-    app-filters{
-        background-color: #C89B3C;
-    }
+app-filters{
+    z-index: 2;
 }
 
 app-data-table{
@@ -30,7 +26,7 @@ pagination-controls{
 
 .custom-pagination ::ng-deep .ngx-pagination {
 
-    span,a {
+    span,a,li {
         color: white;
     } 
 
